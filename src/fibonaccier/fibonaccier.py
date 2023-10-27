@@ -1,5 +1,5 @@
 from asyncio import gather, run, sleep as async_sleep
-from random import randint
+from random import random
 from typing import Tuple
 
 from .stopwatch import stopwatch
@@ -33,7 +33,7 @@ class Fibonaccier:
         Returns:
             int: The requested element of the Fibonacci sequence.
         """
-        await async_sleep(randint(1, 11))
+        await async_sleep(random())
         return Fibonaccier._calculate(number)
 
     @staticmethod

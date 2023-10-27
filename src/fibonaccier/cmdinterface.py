@@ -24,4 +24,4 @@ class CmdInterface:
             print(f"Not a valid integer in {CmdInterface.TRIES} tries? I see, you are doing some exploratory testing. ;)")
             return
         print(f"The {desired_index}. element of the Fibonacci sequence is: {result}")
-        print(f"The faster call was call #{call_number}. It finished under {run_time:.1f} seconds.")
+        print(f"The faster call was call #{call_number}. It finished under {run_time:.4f} seconds.")
