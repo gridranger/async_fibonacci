@@ -4,7 +4,7 @@ Run `python main.py` at folder `src`.
 
 # Notes
 
-* Interface and business logic is separated. Async calls are hidden from the interface.
+* Interface and business logic is separated. Async calls are hidden from the user interface.
 * Passes flake8 and branch coverage is 100%.
 * UnitTest is used though I prefer pytest but didn't want to add any 3rd party requirement. 
 * Done under gross 2.5 hours.
