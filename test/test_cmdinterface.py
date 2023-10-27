@@ -14,7 +14,7 @@ class TestCmdInterface(TestCase):
         mocked_print.assert_has_calls([call(CmdInterface.NOT_INT),
                                        call(CmdInterface.BELOW_ONE),
                                        call("The 3. element of the Fibonacci sequence is: 3"),
-                                       call("The faster call was call #2. It finished under 0.1 seconds.")])
+                                       call("The faster call was call #2. It finished under 0.1000 seconds.")])
         assert mocked_input.call_count == 3
         do_concurrent_calculations.assert_called_once_with(3)
 
