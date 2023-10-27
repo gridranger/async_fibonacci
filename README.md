@@ -17,9 +17,11 @@ Make 2 asynchronous/concurrent calls to a function fib(...) which
 - a) includes a random delay of up to 1 second
 - b) calculates and returns the fibonacci number calculated
 using the following recursive formula:
-   Fib(0) = 0
-   Fib(1) = 1
-   Fib(n) = Fib(n-1) + Fib(n-2)
+```
+Fib(0) = 0
+Fib(1) = 1
+Fib(n) = Fib(n-1) + Fib(n-2)
+```
 Wait until both of the asynchronous calls finish.
 
 Print out the resulting Fibonacci number Fib(n), and which one of

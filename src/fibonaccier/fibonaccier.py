@@ -9,7 +9,7 @@ class Fibonaccier:
     _cache = [0, 1]
 
     @classmethod
-    def _calculate(cls, number: int) -> int:
+    def _fib(cls, number: int) -> int:
         """Calculates and returns the requested element of the Fibonacci sequence.
 
         Args:
@@ -34,7 +34,7 @@ class Fibonaccier:
             int: The requested element of the Fibonacci sequence.
         """
         await async_sleep(random())
-        return Fibonaccier._calculate(number)
+        return Fibonaccier._fib(number)
 
     @staticmethod
     async def _do_concurrent_calculations(number: int) -> Tuple[int, float, int]:

@@ -11,21 +11,21 @@ class AsyncSleepMock(MagicMock):
 
 class TestFibonaccier(TestCase):
 
-    def test_calculate_already_known(self):
-        assert Fibonaccier._calculate(1) == 1
+    def test__fib_already_known(self):
+        assert Fibonaccier._fib(1) == 1
 
-    def test_calculate_new(self):
-        assert Fibonaccier._calculate(50) == 12586269025
+    def test__fib_new(self):
+        assert Fibonaccier._fib(50) == 12586269025
         assert len(Fibonaccier._cache) == 51
 
-    @patch.object(Fibonaccier, "_calculate", return_value=55)
+    @patch.object(Fibonaccier, "_fib", return_value=55)
     @patch("src.fibonaccier.fibonaccier.async_sleep", new_callable=AsyncSleepMock)
-    def test_async_calculate(self, sleep: AsyncSleepMock, calculate: Mock):
+    def test_async_calculate(self, sleep: AsyncSleepMock, fib: Mock):
         result = run(Fibonaccier._async_calculate(10))
-        assert result[0] == calculate.return_value
+        assert result[0] == fib.return_value
         assert 0 < result[1] < 1
         sleep.assert_called()
-        calculate.assert_called_once_with(10)
+        fib.assert_called_once_with(10)
 
     @patch.object(Fibonaccier, "_async_calculate", return_value=(55, 0.1))
     def test__do_concurrent_calculations(self, async_calculate: Mock):
