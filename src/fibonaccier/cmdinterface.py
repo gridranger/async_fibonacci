@@ -15,7 +15,7 @@ class CmdInterface:
             except ValueError:
                 print(CmdInterface.NOT_INT)
                 continue
-            if desired_index > 1:
+            if desired_index > 0:
                 result, run_time, call_number = Fibonaccier.do_concurrent_calculations(desired_index)
                 break
             else:

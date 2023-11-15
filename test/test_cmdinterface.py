@@ -18,10 +18,9 @@ class TestCmdInterface(TestCase):
         assert mocked_input.call_count == 3
         do_concurrent_calculations.assert_called_once_with(3)
 
-    @patch("builtins.input")
+    @patch("builtins.input", side_effect=range(-4, 1))
     @patch("builtins.print")
-    @patch("src.fibonaccier.fibonaccier.Fibonaccier.do_concurrent_calculations", return_value=(3, 0.1, 2))
-    def test_main_no_valid_inputs(self, _: Mock, mocked_print: Mock, mocked_input: Mock):
+    def test_main_no_valid_inputs(self, mocked_print: Mock, mocked_input: Mock):
         CmdInterface.main()
         assert mocked_input.call_count == CmdInterface.TRIES
         mocked_print.assert_called_with("Not a valid integer in 5 tries? I see, you are doing some exploratory testing. ;)")
